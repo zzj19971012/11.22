@@ -174,3 +174,10 @@ git tag v0.9 f52c633
 
 
 
+git remote rm 远程库名字   删除远程库
+git remote -v 查看 远程库
+git remote add 名字 地址   增加远程库
+
+git push 远程库名字 分支名字
+
+
