@@ -1,0 +1,176 @@
+git init  初始化仓库
+git add 文件名   把文件添加到暂存区  可反复多次使用，添加多个文件
+git commit -m '描述文字'  把暂存区的所有内容提交到当前分支 
+git status  查看工作区的状态
+git diff 查看修改的内容
+
+git log 查看提交历史 
+git log --pretty=oneline  简易版
+
+head代表当前版本
+上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
+
+git reset --hard HEAD^ 回退上一个版本
+git reset --hard 版本号   回退到指定版本
+
+git reflog用来记录你的每一次命令
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+
+穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+
+
+git diff HEAD -- 文件名 命令可以查看工作区和版本库里面最新版本的区别
+
+
+
+git checkout -- 文件名   
+
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+总之，就是让这个文件回到最近一次git commit或git add时的状态。
+
+git reset HEAD <文件名> 可以把暂存区的修改回退到工作区
+
+
+git rm 文件名  删除文件，再commit  文件就从版本库中被删除了。
+git checkout -- test.txt  删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本
+
+删除文件： 先手动删除文件，在使用git rm 文件名 或者git add 文件名  再 commit
+
+git checkout -- 文件名    删错了，可以恢复
+
+
+
+从现在起，只要本地作了提交，就可以通过命令：
+
+$ git push origin master
+把本地master分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！
+
+
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+我们可以删除已有的GitHub远程库：
+git remote rm origin
+
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容
+
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+创建并切换到新的dev分支，可以使用：
+
+
+$ git switch -c dev
+直接切换到已有的master分支，可以使用：
+
+$ git switch master
+
+
+Git鼓励大量使用分支：
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>或者git switch <name>
+
+创建+切换分支：git checkout -b <name>或者git switch -c <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+可以通过git branch -D <name>强行删除。
+
+
+
+合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
+
+git merge --no-ff -m "merge with no-ff" dev   推荐使用普通模式
+
+
+
+
+因此，多人协作的工作模式通常是这样：
+
+首先，可以试图用git push origin <branch-name>推送自己的修改；
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+
+如果合并有冲突，则解决冲突，并在本地提交；
+
+没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+
+这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
+
+
+查看远程库信息，使用git remote -v；
+
+本地新建的分支如果不推送到远程，对其他人就是不可见的；
+
+从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+
+在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+
+建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+
+从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+
+
+
+
+命令git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+git tag v0.9 f52c633
+
+命令git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+
+命令git tag可以查看所有标签。
+
+可以用git show <tagname>查看标签信息：
+
+
+命令git push origin <tagname>可以推送一个本地标签；
+
+命令git push origin --tags可以推送全部未推送过的本地标签；
+
+命令git tag -d <tagname>可以删除一个本地标签；
+
+命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
+
+
+
+
+
+
+查看分支 git branch
+
+查看远程分支 git branch -r
+
+查看所有分支 git branch -a
+
+删除本地分支 git branch -d 分支名  比如 git branch -d dev
+
+强制删除本地分支 git branch -D 分支名  
+
+删除远程分支 git push 远程仓库名 :分支名     比如  git push origin :dev
+
+查看标签 git tag
+
+创建标签 git tag -a 标签名 -m '描述'
+
+删除本地标签 git tag -d 标签名
+
+强制删除本地标签 git tag -D 标签名
+
+删除远程标签 git push 远程仓库名 :标签名
+
+
+
+
+
