@@ -1,0 +1,48 @@
+*   [33mcommit c1616445326af51ec89004d76b9ea78a5ec99e0f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+[31m|[m[32m\[m  Merge: c0b47a9 69ca7e0
+[31m|[m [32m|[m Author: 朱子健 <1435171712@qq.com>
+[31m|[m [32m|[m Date:   Tue Nov 3 08:41:12 2020 +0800
+[31m|[m [32m|[m 
+[31m|[m [32m|[m     conflict fixed
+[31m|[m [32m|[m 
+[31m|[m * [33mcommit 69ca7e0cffa975559eb9cd8f6c3912544e4f7672[m
+[31m|[m [32m|[m Author: 朱子健 <1435171712@qq.com>
+[31m|[m [32m|[m Date:   Tue Nov 3 08:36:27 2020 +0800
+[31m|[m [32m|[m 
+[31m|[m [32m|[m     newB1
+[31m|[m [32m|[m 
+* [32m|[m [33mcommit c0b47a9a57417e8f154612c9185e388a4194f49c[m
+[32m|[m[32m/[m  Author: 朱子健 <1435171712@qq.com>
+[32m|[m   Date:   Tue Nov 3 08:38:24 2020 +0800
+[32m|[m   
+[32m|[m       master
+[32m|[m 
+* [33mcommit 46a025ac2623b4a43d964020bbfae711e655edaa[m[33m ([m[1;31morigin/master[m[33m)[m
+[32m|[m Author: 朱子健 <1435171712@qq.com>
+[32m|[m Date:   Mon Nov 2 17:05:06 2020 +0800
+[32m|[m 
+[32m|[m     add user.txt
+[32m|[m 
+* [33mcommit ad0d968fc6492198e05845a4a98006ebc8f6240c[m
+[32m|[m Author: 朱子健 <1435171712@qq.com>
+[32m|[m Date:   Mon Nov 2 16:48:56 2020 +0800
+[32m|[m 
+[32m|[m     re me
+[32m|[m 
+* [33mcommit 3ee2a725cf522e0cb1a5390f446e3d9d042a79d5[m
+[32m|[m Author: 朱子健 <1435171712@qq.com>
+[32m|[m Date:   Mon Nov 2 16:45:53 2020 +0800
+[32m|[m 
+[32m|[m     ss
+[32m|[m 
+* [33mcommit e2ce04d3a634c246399a2d89aa93ee1406757720[m
+[32m|[m Author: 朱子健 <1435171712@qq.com>
+[32m|[m Date:   Mon Nov 2 15:48:41 2020 +0800
+[32m|[m 
+[32m|[m     'd2'
+[32m|[m 
+* [33mcommit aaf1bb35256b0abb86989ceb6841d724560b30e8[m
+  Author: 朱子健 <1435171712@qq.com>
+  Date:   Mon Nov 2 15:42:32 2020 +0800
+  
+      'd1'
